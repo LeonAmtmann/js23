@@ -5,3 +5,11 @@ components:
   - name: dev-env
     container:
       image: docker-eu.artifactory.swg-devops.com/sys-chipdev-cloud-team-docker-local/images/base:latest
+
+commands:
+  - id: test
+    exec:
+      label: "Echo test"
+      commandLine: "echo hello"
+      group:
+        kind: run
