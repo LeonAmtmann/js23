@@ -9,6 +9,7 @@ commands:
   - id: test
     exec:
       label: "Echo test"
+      component: tools
       commandLine: "echo hello"
       group:
         kind: run
