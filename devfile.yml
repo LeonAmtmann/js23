@@ -4,7 +4,7 @@ metadata:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      image: docker-eu.artifactory.swg-devops.com/sys-chipdev-cloud-team-experimental-docker-local/jumpstart-cocofu:latest
       endpoints:
         - exposure: public
           name: nodejs
