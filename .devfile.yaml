@@ -5,7 +5,6 @@ components:
   - name: dev-env
     container:
       image: docker-eu.artifactory.swg-devops.com/sys-chipdev-cloud-team-experimental-docker-local/jumpstart-cocofu:latest
-
 commands:
   - id: test
     exec:
