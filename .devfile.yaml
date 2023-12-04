@@ -2,14 +2,20 @@ schemaVersion: 2.1.0
 metadata:
   name: helloworld-example-docker-test
 components:
+  - name: tools
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
   - name: dev-env
     container:
-      image: docker-eu.artifactory.swg-devops.com/sys-chipdev-cloud-team-experimental-docker-local/jumpstart-cocofu:latest
+       image: docker-eu.artifactory.swg-devops.com/sys-chipdev-cloud-team-experimental-docker-local/jumpstart-cocofu:latest
+       command: ['/bin/sh', '-c']
+       args: ['tail -f /dev/null']
 commands:
-  - id: test
+  - id: first-command
     exec:
-      label: "Echo test"
-      component: tools
-      commandLine: "echo hello"
-      group:
-        kind: run
+      component: dev-env
+      commandLine: "echo first command"
+  - id: second-command
+    exec:
+      component: dev-env
+      commandLine: "echo second command"
